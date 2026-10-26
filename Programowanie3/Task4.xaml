@@ -1,0 +1,18 @@
+﻿<Window x:Class="Programowanie3.Task4"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Programowanie3"
+        mc:Ignorable="d"
+        Title="Task4" Height="450" Width="800">
+    <Canvas>
+        <Button Content="1" Width="50" Height="50" Canvas.Left="375" Canvas.Top="75" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <Button Content="2" Width="50" Height="50" Canvas.Left="224" Canvas.Top="200" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+        <Button Content="3" Width="50" Height="50" Canvas.Left="535" Canvas.Top="200" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+        <Button Content="4" Width="50" Height="50" Canvas.Left="125" Canvas.Top="319"/>
+        <Button Content="5" Width="50" Height="50" Canvas.Left="325" Canvas.Top="319" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+        <Button Content="6" Width="50" Height="50" Canvas.Left="468" Canvas.Top="319" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+        <Button Content="7" Width="50" Height="50" Canvas.Left="637" Canvas.Top="319" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+    </Canvas>
+</Window>
