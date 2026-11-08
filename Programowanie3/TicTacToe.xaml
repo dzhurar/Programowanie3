@@ -1,29 +1,42 @@
 ﻿<Window x:Class="Programowanie3.TicTacToe"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:Programowanie3"
-        mc:Ignorable="d"
         Title="TicTacToe" Height="400" Width="400">
+
     <Grid Margin="10">
-        <ItemsControl ItemsSource="{Binding Cells}">
-        <ItemsControl.ItemsPanel>
-            <ItemsPanelTemplate>
-                <UniformGrid Rows="3" Columns="3"/>
-            </ItemsPanelTemplate>
-        </ItemsControl.ItemsPanel>
-            <ItemsControl.ItemTemplate>
-                <DataTemplate>
-                    <Button Content="{Binding Mark}" 
-                            Tag="{Binding Index}" 
-                            FontSize="64" 
-                            FontWeight="Bold" 
-                            Margin="5" 
-                            Background="#F0F0F0" 
-                            Click="Cell_Click"/>
-                </DataTemplate>
-            </ItemsControl.ItemTemplate>
-        </ItemsControl>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <!-- first row -->
+        <Button Grid.Row="0" Grid.Column="0" Content="{Binding Path=Cells[0].Mark}" Tag="0" Click="Cell_Click" 
+                FontSize="64" FontWeight="Bold" Margin="5" Background="#F0F0F0"/>
+        <Button Grid.Row="0" Grid.Column="1" Content="{Binding Path=Cells[1].Mark}" Tag="1" Click="Cell_Click" 
+                FontSize="64" FontWeight="Bold" Margin="5" Background="#F0F0F0"/>
+        <Button Grid.Row="0" Grid.Column="2" Content="{Binding Path=Cells[2].Mark}" Tag="2" Click="Cell_Click" 
+                FontSize="64" FontWeight="Bold" Margin="5" Background="#F0F0F0"/>
+
+        <!-- second row -->
+        <Button Grid.Row="1" Grid.Column="0" Content="{Binding Path=Cells[3].Mark}" Tag="3" Click="Cell_Click" 
+                FontSize="64" FontWeight="Bold" Margin="5" Background="#F0F0F0"/>
+        <Button Grid.Row="1" Grid.Column="1" Content="{Binding Path=Cells[4].Mark}" Tag="4" Click="Cell_Click" 
+                FontSize="64" FontWeight="Bold" Margin="5" Background="#F0F0F0"/>
+        <Button Grid.Row="1" Grid.Column="2" Content="{Binding Path=Cells[5].Mark}" Tag="5" Click="Cell_Click" 
+                FontSize="64" FontWeight="Bold" Margin="5" Background="#F0F0F0"/>
+
+        <!-- third row -->
+        <Button Grid.Row="2" Grid.Column="0" Content="{Binding Path=Cells[6].Mark}" Tag="6" Click="Cell_Click" 
+                FontSize="64" FontWeight="Bold" Margin="5" Background="#F0F0F0"/>
+        <Button Grid.Row="2" Grid.Column="1" Content="{Binding Path=Cells[7].Mark}" Tag="7" Click="Cell_Click" 
+                FontSize="64" FontWeight="Bold" Margin="5" Background="#F0F0F0"/>
+        <Button Grid.Row="2" Grid.Column="2" Content="{Binding Path=Cells[8].Mark}" Tag="8" Click="Cell_Click" 
+                FontSize="64" FontWeight="Bold" Margin="5" Background="#F0F0F0"/>
     </Grid>
 </Window>
