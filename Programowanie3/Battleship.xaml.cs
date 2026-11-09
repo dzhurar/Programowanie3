@@ -1,6 +1,7 @@
 ﻿using System.Collections.ObjectModel;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Data;
 
 namespace Programowanie3
 {
@@ -33,6 +34,44 @@ namespace Programowanie3
             EnemyBoard = isPlayer1 ? session.BoardPlayer2 : session.BoardPlayer1;
 
             DataContext = this;
+
+            GenerateBoard(MyGrid, MyBoard, "Player");
+            GenerateBoard(EnemyGrid, EnemyBoard, "Enemy");
+        }
+
+        private void GenerateBoard(Grid grid, ObservableCollection<BattleCell> board, string mode)
+        {
+            StateToColorConverter converter = new StateToColorConverter();
+
+            for (int i = 0; i < 100; i++)
+            {
+                Button btn = new Button { Margin = new Thickness(1) };
+
+                if (mode == "Enemy")
+                {
+                    btn.Tag = i.ToString(); // save click index in Tag
+                    btn.Click += EnemyCell_Click;
+                }
+                else
+                {
+                    btn.IsHitTestVisible = false; // Your field cannot be clicked
+                }
+
+                // Create data binding (Binding) from C#
+                Binding binding = new Binding($"[{i}].State")
+                {
+                    Source = board,
+                    Converter = converter,
+                    ConverterParameter = mode
+                };
+                btn.SetBinding(Button.BackgroundProperty, binding);
+
+                // Set the button in the correct cell of the grid (Y = row, X = column)
+                Grid.SetRow(btn, i / 10);
+                Grid.SetColumn(btn, i % 10);
+
+                grid.Children.Add(btn);
+            }
         }
 
         private void EnemyCell_Click(object sender, RoutedEventArgs e)
